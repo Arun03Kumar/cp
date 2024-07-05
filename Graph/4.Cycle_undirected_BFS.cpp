@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isCycleDFS(unordered_map<int, vector<int>> adj, int node, vector<int> &visited) {
+bool isCycleBFS_undirected(unordered_map<int, vector<int>> adj, int node, vector<int> &visited) {
    queue<pair<int, int> > que;
    que.psuh({node, -1});
    visited[node] = true;
@@ -32,7 +32,7 @@ int main() {
     //now since graph can be disconnected so iterate over each vetices.
     for(int i = 0; i < v; i++) {
         if(visited[i] == false) {
-            bool x = isCycleBFS(adj, i, visited); //when we start then there is no parent hence we gave it -1;
+            bool x = isCycleBFS_undirected(adj, i, visited); //when we start then there is no parent hence we gave it -1;
             if(x == true) return true;
         }
     }

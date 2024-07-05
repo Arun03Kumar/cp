@@ -5,7 +5,7 @@ using namespace std;
 
 // basice concept is that we are doing dfs and if we came up to a node which is already visited then we can say that graph contains cycle. but there is a problem assume two node 0 ---------- 1 these are undirected so 0 is marked visited and we move to 1 so now when we are at 1 we mark is visited then we search for its children so we will found that 0 is also visited so we can say that graph contains cycle but we can see its not, hence we need to do a trick we need to also define the parent of each node, so when we encounter a case where children is alredy visited so we compare the parent. if we are at a node and its parent came as visited then we will move on we won't do anything, but if we find a node is already visited and that is not the parent of current node it means there is cycle;
 
-bool isCycleDFS(unordered_map<int, vector<int>> adj, int node, vector<int> &visited, int parent) {
+bool isCycleDFS_undirected(unordered_map<int, vector<int>> adj, int node, vector<int> &visited, int parent) {
     visited[node] = true;
     for(int x: adj[node]) {
         if(x == parent) continue; // if it is parent then move on because that wont make a cycle
@@ -25,7 +25,7 @@ int main() {
     //now since graph can be disconnected so iterate over each vetices.
     for(int i = 0; i < v; i++) {
         if(visited[i] == false) {
-            bool x = isCycleDFS(adj, i, visited, -1); //when we start then there is no parent hence we gave it -1;
+            bool x = isCycleDFS_undirected(adj, i, visited, -1); //when we start then there is no parent hence we gave it -1;
             if(x == true) return true;
         }
     }
