@@ -22,7 +22,7 @@ bool is_bipartite_DFS(unordered_map<int, vector<int>> adj, vector<int> &color_of
         }
     }
 }
-
+ 
 int main() {
     unordered_map<int, vector<int>> adj;
     vector<int> color_of_vertex(v, -1);
