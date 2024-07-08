@@ -1,5 +1,7 @@
 // it is similar to the rank, here we maintian a size array which tells the size of the set, like in rank we make parent which has larger rank here also we make parent which has larger size, but here when we merge two different groups or sets into one the size should be increase by the sum of those two groups.
 
+// as initially rank of each node was 0, now size of each node will be 1;
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -39,5 +41,15 @@ int Union(int node1, int node2) {
         parent[parent_node1] = parent_node2;
         size[parent_node2] += size[parent_node1];
 
+    }
+}
+
+int main() {
+    parent.resize(v);
+    size.resize(v)
+
+    for(int i = 0; i < v; i++) {
+        parent[i] = i;
+        size[i] = 1; // initially the size of each node will be 1;
     }
 }
