@@ -10,6 +10,8 @@
 
 //initially the parent array contains the same number because initially node itself is their parents.
 
+// parent different hone ka matlab h they are in different set, so we have to bring them in one set by assigning one as the parent of another.
+
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -28,11 +30,11 @@ void Union(int vertex1, int vertex2) {
     int parent_vertex1 = find(vertex1); 
     int parent_vertex2 = find(vertex2); 
 
-    if(parent_vertex1 == parent_vertex2) {
+    if(parent_vertex1 == parent_vertex2) { // parent is same so return
         return;
     }
     
-    parent[vertex1] = vertex2;    // here we assign vertex2 as parent of vertex1 
+    parent[vertex1] = vertex2;    // here we assign vertex2 as parent of vertex1 beacause they are in different set as their parent is not same
 }
 
 int main() {
