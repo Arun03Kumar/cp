@@ -27,6 +27,7 @@ int query(int idx, int low, int high, int l, int r) {
 	return left + right;
 }
 
+// this update is for a particular index
 void update(int idx, int low, int high, int change_idx, int newVal) {
 	if (low == high) {
 		segArr[idx] = newVal;
