@@ -23,7 +23,7 @@ vector<int> shortest_distance_from_source(unordered_map<int, vector<int>> adj, i
 
     vector<int> distance(V, INT_MAX); // here V is the number of vertices
 
-    result[source] = 0; // because source to source distance is 0.
+    distance[source] = 0; // because source to source distance is 0.
     pq.push({0, source});
 
     while(!pq.empty()) {
